@@ -9,8 +9,11 @@ import { MatSnackBar } from '@angular/material';
 })
 export class RicettaListaComponent implements OnInit {
   ricette: Ricetta[];
+  searchbar: boolean;
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar) {
+    this.searchbar = false;
+  }
 
   ngOnInit() {
   }
