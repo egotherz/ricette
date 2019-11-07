@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RicettaSottolistaComponent } from './ricetta-sottolista.component';
+import { RicettaSottoListaComponent } from './ricetta-sottolista.component';
 
 describe('RicettaSottolistaComponent', () => {
-  let component: RicettaSottolistaComponent;
-  let fixture: ComponentFixture<RicettaSottolistaComponent>;
+  let component: RicettaSottoListaComponent;
+  let fixture: ComponentFixture<RicettaSottoListaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RicettaSottolistaComponent ]
+      declarations: [ RicettaSottoListaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RicettaSottolistaComponent);
+    fixture = TestBed.createComponent(RicettaSottoListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

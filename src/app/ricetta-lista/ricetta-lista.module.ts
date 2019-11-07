@@ -7,7 +7,7 @@ import { RicettaEditaComponent } from './ricetta-edita/ricetta-edita.component';
 import { RicettaSingolaComponent } from './ricetta-singola/ricetta-singola.component';
 import { MatToolbarModule, MatStepperModule, MatInputModule, MatButtonModule, MatIconModule,
   MatListModule, MatSnackBarModule, MatExpansionModule, MatTooltipModule } from '@angular/material';
-import { RicettaSottolistaComponent } from './ricetta-sottolista/ricetta-sottolista.component';
+import { RicettaSottoListaComponent } from './ricetta-sottolista/ricetta-sottolista.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { RicettaSottolistaComponent } from './ricetta-sottolista/ricetta-sottoli
     RicettaEditaComponent,
     RicettaSingolaComponent,
     RicettaCercaComponent,
-    RicettaSottolistaComponent
+    RicettaSottoListaComponent
   ],
   imports: [
     CommonModule,
