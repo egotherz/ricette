@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RicettaListaComponent implements OnInit {
 
-  constructor() { }
+  ricette: Ricetta[];
+  searchbar: boolean;
 
-  ngOnInit() {
+  constructor(private snackBar: MatSnackBar) {
+    this.searchbar = false;
   }
-
-}

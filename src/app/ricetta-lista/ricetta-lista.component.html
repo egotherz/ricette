@@ -2,6 +2,17 @@
   <mat-toolbar-row class="justify-content-between">
     <span>Ricette</span>
     <span></span>
+    <div class="search">
+      <button mat-icon-button aria-label="" (click)="searchbar=!searchbar">
+        <!-- <button routerLink="/piani" mat-icon-button aria-label="Lista"> -->
+          <mat-icon>search</mat-icon>
+        </button>
+              <div class="searchbar">
+                <ng-template class="temp" [ngIf]="searchbar">
+                  <input type="text">
+                </ng-template>
+              </div>
+</div>
     <div>
         <a href="ricetta-lista.component.html"><button mat-icon-button aria-label="">
         <!-- <button routerLink="/piani" mat-icon-button aria-label="Lista"> -->
