@@ -1,0 +1,16 @@
+.search{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 75px;
+  .searchbar{
+    display: inline;
+    input{
+      border-radius: 10px;
+    }
+    }
+}
+
+
+
+
