@@ -1,4 +1,6 @@
+import { Ricetta } from './models/ricetta';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-ricetta-lista',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ricetta-lista.component.scss']
 })
 export class RicettaListaComponent implements OnInit {
+  ricette: Ricetta[];
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
