@@ -15,5 +15,6 @@ export class RicettaListaComponent implements OnInit {
   constructor(private snackBar: MatSnackBar) {
     this.searchbar = false;
   }
-  ngOnInit(){}
+  ngOnInit() {
+  }
   }
