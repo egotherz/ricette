@@ -16,6 +16,5 @@ export class RicettaListaComponent implements OnInit {
     this.searchbar = false;
   }
   ngOnInit() {
-
   }
   }
