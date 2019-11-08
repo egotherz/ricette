@@ -6,6 +6,7 @@
         <br>
         Materiali: {{ ricetta.materiali }}
         <br>
+        <br>Tag: {{ ricetta.tag }}
       </div>
       <mat-vertical-stepper #stepper (selectionChange)="changStep($event)">
         <ng-template matStepperIcon="edit">

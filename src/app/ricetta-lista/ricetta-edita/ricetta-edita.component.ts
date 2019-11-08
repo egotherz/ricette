@@ -65,8 +65,9 @@ export class RicettaEditaComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       _id: [ricetta._id],
       _rev: [ricetta._rev],
-      titolo: [ricetta.titolo],
-      materiali: [ricetta.materiali],
+      titolo: [ricetta.titolo || null],
+      materiali: [ricetta.materiali || null],
+      tag: [ricetta.tag || null, Validators.required],
       steps: this.formBuilder.array(steps)
 
     });
