@@ -8,6 +8,7 @@ import { RicettaSingolaComponent } from './ricetta-lista/ricetta-singola/ricetta
 import { RicettaSottoListaComponent } from './ricetta-lista/ricetta-sottolista/ricetta-sottolista.component';
 
 const routes: Routes = [
+  { path: 'ricetta-lista', component: RicettaListaComponent },
   { path: 'ricetta-lista/ricetta-sottolista', component: RicettaSottoListaComponent },
   { path: 'ricetta-lista/ricetta-edita/:id', component: RicettaEditaComponent },
   { path: 'ricetta-lista/:id', component: RicettaSingolaComponent },

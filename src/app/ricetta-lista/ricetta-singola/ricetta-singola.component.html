@@ -1,1 +1,25 @@
-<p>ricetta-singola works!</p>
+<main>
+  <div class="container">
+    <ng-template [ngIf]="ricetta">
+      <mat-vertical-stepper #stepper (selectionChange)="changStep($event)">
+        <ng-template matStepperIcon="edit">
+          <mat-icon>
+            done
+          </mat-icon>
+        </ng-template>
+        <mat-step *ngFor="let step of ricetta.steps; let i = index">
+          {{ step.titolo }}
+          {{ step.descrizione }}
+          <div>
+            <button *ngIf="i > 0 && !hasFinished" mat-button matStepperPrevious>
+              indietro
+            </button>
+            <button *ngIf="i < ricetta.steps.length - 1" mat-button matStepperNext>
+              avanti
+            </button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+    </ng-template>
+  </div>
+</main>

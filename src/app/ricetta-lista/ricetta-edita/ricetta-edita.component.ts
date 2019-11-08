@@ -1,6 +1,6 @@
 import { PouchdbService } from './../services/pouchdb.service';
 import { MatSnackBar } from '@angular/material';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -12,7 +12,7 @@ import { Ricetta } from '../models/ricetta';
   templateUrl: './ricetta-edita.component.html',
   styleUrls: ['./ricetta-edita.component.scss']
 })
-export class RicettaEditaComponent implements OnInit {
+export class RicettaEditaComponent implements OnInit, OnDestroy {
   form: FormGroup;
   private routeSub: Subscription;
 
@@ -26,6 +26,10 @@ export class RicettaEditaComponent implements OnInit {
 
   ngOnInit() {
     this.init();
+  }
+
+  ngOnDestroy(): void {
+    this.routeSub.unsubscribe();
   }
 
   init() {
