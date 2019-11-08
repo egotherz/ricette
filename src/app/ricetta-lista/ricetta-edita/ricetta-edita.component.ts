@@ -62,6 +62,7 @@ export class RicettaEditaComponent implements OnInit {
       _id: [ricetta._id],
       _rev: [ricetta._rev],
       titolo: [ricetta.titolo],
+      materiali: [ricetta.materiali],
       steps: this.formBuilder.array(steps)
 
     });
@@ -77,6 +78,10 @@ export class RicettaEditaComponent implements OnInit {
 
   insertStep(index: number) {
     this.steps.insert(index, this.buildStep());
+  }
+
+  removeStep(index: number) {
+    this.steps.removeAt(index);
   }
 
   subtmitForm() {
