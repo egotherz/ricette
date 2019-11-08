@@ -1,1 +1,20 @@
-<p>ricetta-sottolista works!</p>
+<mat-toolbar class="d-flex mat-elevation-z6">
+  <mat-toolbar-row class="justify-content-center">
+        <button mat-mini-fab aria-label="Aggiungi" routerLink="/ricetta-lista/ricetta-edita/0">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<main>
+  <div class="container">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let ricetta of ricette">
+          <a matLine [routerLink]="'/ricetta-lista/' + ricetta._id">{{ ricetta.titolo }}</a>
+          <button mat-icon-button [routerLink]="'/ricetta-lista/ricetta-edita' + ricetta._id">
+            <mat-icon>edit</mat-icon>
+          </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</main>
