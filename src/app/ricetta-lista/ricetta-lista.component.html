@@ -3,20 +3,22 @@
     <span>Ricette</span>
     <span></span>
     <div class="search">
+      <div class="searchbar">
+        <ng-template class="temp" [ngIf]="searchbar">
+          <input type="text">
+        </ng-template>
+      </div>
       <button mat-icon-button aria-label="" (click)="searchbar=!searchbar">
-          <mat-icon>search</mat-icon>
-        </button>
-              <div class="searchbar">
-                <ng-template class="temp" [ngIf]="searchbar">
-                  <input type="text">
-                </ng-template>
-              </div>
-</div>
-    <div>
+        <mat-icon>search</mat-icon>
+      </button>
       <button routerLink="/ricetta-lista/ricetta-sottolista" routerLinkActive="router-link-active" mat-icon-button aria-label="Lista">
         <mat-icon>view_list</mat-icon>
       </button>
     </div>
+
+  <!--   <div>
+
+    </div> -->
   </mat-toolbar-row>
 </mat-toolbar>
 
