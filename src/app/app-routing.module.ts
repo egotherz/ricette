@@ -9,7 +9,7 @@ import { RicettaSottoListaComponent } from './ricetta-lista/ricetta-sottolista/r
 
 const routes: Routes = [
   { path: 'ricetta-lista', component: RicettaListaComponent },
-  { path: 'ricetta-sotto-lista', component: RicettaSottoListaComponent },
+  { path: 'ricetta-lista/ricetta-sottolista', component: RicettaSottoListaComponent },
   { path: 'ricetta-lista/ricetta-edita/:id', component: RicettaEditaComponent },
   { path: 'ricetta-lista/:id', component: RicettaSingolaComponent },
   { path: 'ricetta-lista/ricetta-cerca', component: RicettaCercaComponent },
