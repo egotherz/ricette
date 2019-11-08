@@ -1,7 +1,8 @@
 export class Step {
+  public stato: boolean;
+
   constructor(
     public titolo: string = '',
-    public stato: boolean,
     public descrizione: string = '') {
   }
 }
