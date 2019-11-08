@@ -55,7 +55,7 @@ export class RicettaSingolaComponent implements OnInit, OnDestroy {
     this.stepSelezionato = true;
   }
 
-  changSet(event: StepperSelectionEvent) {
+  changStep(event: StepperSelectionEvent) {
     if (this.stepSelezionato) {
       return;
     }

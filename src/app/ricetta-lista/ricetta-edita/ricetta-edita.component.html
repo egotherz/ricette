@@ -1,1 +1,85 @@
-<p>ricetta-edita works!</p>
+<main>
+    <div class="container">
+      <ng-template [ngIf]="form"> <!-- questo non genera nessun tag html -->
+        <form [formGroup]="form" (ngSubmit)="subtmitForm()">
+          <div class="row mt-3">
+            <mat-form-field class="col" hintLabel="massimo 100 caratteri">
+                <input formControlName="titolo" matInput #title maxlength="100" placeholder="Titolo">
+                <mat-hint align="end">{{title.value?.length || 0}}/100</mat-hint>
+              </mat-form-field>
+          </div>
+          <div class="row mt-3">
+              <mat-form-field class="col">
+                <textarea formControlName="materiali" matInput placeholder="Materiali"></textarea>
+              </mat-form-field>
+          </div>
+          <div class="row mt-3">
+            <h3>Preparazione</h3>
+          </div>
+          <div formArrayName="steps">
+            <mat-accordion cdkDropList (cdkDropListDropped)="drop($event)" >
+              <mat-expansion-panel
+              *ngFor="let step of steps.controls; let i=index"
+              [formGroupName]="i"
+              cdkDrag>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Step {{ i +1 }}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{ title.value }}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="row my-3">
+                  <mat-form-field class="col">
+                    <input formControlName="titolo" matInput #title maxlength="100" placeholder="Titolo" required>
+                  </mat-form-field>
+                </div>
+                <div class="row my-3">
+                  <mat-form-field class="col">
+                    <textarea formControlName="descrizione" matInput placeholder="Descrizione" required></textarea>
+                  </mat-form-field>
+                </div>
+                  <mat-action-row>
+                    <button type="button"
+                    mat-icon-button
+                    aria-label="inserisci sopra"
+                    matToolTip="inserisci un nuovo passaggio"
+                    color="primary"
+                    (click)="insertStep(i)">
+                    <mat-icon>add_circle</mat-icon>
+                  </button>
+                  <button type="button"
+                mat-icon-button
+                aria-label="rimuovi"
+                matToolTip="rimuovi"
+                color="primary"
+                (click)="removeStep(i)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+                  </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+            <div class="row mt-3">
+              <div class="col text-center">
+                <button type="button"
+                 mat-mini-fab aria-label="Aggiungi un passaggio"
+                 matToolTip="Aggiungi un passaggio"
+                 color="primary"
+                 (click)="addStep()">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button type="submit"
+          mat-fab aria-label="Salva"
+          matTooltip="Salva la ricetta"
+          [disabled]="!form.valid">
+            <mat-icon>save</mat-icon>
+          </button>
+        </form>
+      </ng-template>
+
+    </div>
+  </main>
