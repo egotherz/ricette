@@ -7,7 +7,6 @@ export class Ricetta {
   constructor(
     public titolo: string = '',
     public materiali: string = '', // textarea
-    public protocolo: string= '', // titolo protocollo
     public steps: Step[] = [new Step()]) {
   }
 }
