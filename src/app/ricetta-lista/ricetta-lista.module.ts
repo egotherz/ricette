@@ -8,6 +8,7 @@ import { RicettaSingolaComponent } from './ricetta-singola/ricetta-singola.compo
 import { MatToolbarModule, MatStepperModule, MatInputModule, MatButtonModule, MatIconModule,
   MatListModule, MatSnackBarModule, MatExpansionModule, MatTooltipModule } from '@angular/material';
 import { RicettaSottoListaComponent } from './ricetta-sottolista/ricetta-sottolista.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { RicettaSottoListaComponent } from './ricetta-sottolista/ricetta-sottoli
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
     MatToolbarModule,
     MatStepperModule,
     MatInputModule,
