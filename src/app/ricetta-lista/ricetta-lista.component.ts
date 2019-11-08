@@ -17,4 +17,4 @@ export class RicettaListaComponent implements OnInit {
   }
   ngOnInit() {
   }
-  }
+

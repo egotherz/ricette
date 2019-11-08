@@ -11,7 +11,7 @@ export class PouchdbService implements RicettaQl {
   localDB: PouchDB;
 
   constructor() {
-    this.localDB = new PouchDB('ricetta');
+    this.localDB = new PouchDB('ricette');
     /*const remoteDB = new PouchDB('http://localhost:5984/plans');
     this.localDB
     .sync(remoteDB, {live: true, retry: true})
