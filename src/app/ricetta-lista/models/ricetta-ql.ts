@@ -5,5 +5,5 @@ export interface RicettaQl {
   getRicetta(id: string): Promise<Ricetta>;
   fetchRicette(): Promise<Ricetta[]>;
   setRicetta(ricetta: Ricetta): Promise<any>;
-  searchRicetta(tag: string): Promise<Ricetta>;
+  searchRicetta(tag: string): Promise<Ricetta[]>;
 }
