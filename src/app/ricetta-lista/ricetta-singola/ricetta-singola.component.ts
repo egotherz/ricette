@@ -36,7 +36,8 @@ export class RicettaSingolaComponent implements OnInit, OnDestroy {
       .catch(error => {
         console.error(error);
         this.snackBar.open('errore nel caricamento', 'Errore', {
-          duration: 2000});
+          duration: 2000
+        });
       });
     });
   }
@@ -48,6 +49,7 @@ export class RicettaSingolaComponent implements OnInit, OnDestroy {
   init() {
     this.currentStepIndex = 0;
     this.stepSelezionato = false;
+
   }
 
   cliccato() {

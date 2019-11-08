@@ -20,7 +20,7 @@
     <mat-nav-list>
       <mat-list-item *ngFor="let ricetta of ricette">
           <a matLine [routerLink]="'/ricetta-lista/' + ricetta._id">{{ ricetta.titolo }}</a>
-          <button mat-icon-button [routerLink]="'/ricetta-lista/ricetta-edita' + ricetta._id">
+          <button mat-icon-button [routerLink]="'/ricetta-lista/ricetta-edita/' + ricetta._id">
             <mat-icon>edit</mat-icon>
           </button>
       </mat-list-item>

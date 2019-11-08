@@ -1,21 +1,37 @@
 <main>
   <div class="container">
     <ng-template [ngIf]="ricetta">
+      <div class="container">
+        Titolo: {{ ricetta.titolo }}
+        <br>
+        Materiali: {{ ricetta.materiali }}
+        <br>
+      </div>
       <mat-vertical-stepper #stepper (selectionChange)="changStep($event)">
         <ng-template matStepperIcon="edit">
           <mat-icon>
-            done
+            next
           </mat-icon>
         </ng-template>
         <mat-step *ngFor="let step of ricetta.steps; let i = index">
-          Titolo: {{ step.titolo }}
-          <br>
-          Descrizione: {{ step.descrizione }}
+          <ng-template matStepLabel>
+            <span>{{ step.titolo }}</span>
+          </ng-template>
+          Procedura:<br />
+          {{ step.descrizione }}
           <div>
-            <button *ngIf="i > 0 && !stepSelezionato" mat-button matStepperPrevious>
+            <button
+              *ngIf="i > 0 && !stepSelezionato"
+              mat-button
+              matStepperPrevious
+            >
               Indietro
             </button>
-            <button *ngIf="i < ricetta.steps.length - 1" mat-button matStepperNext>
+            <button
+              *ngIf="i < ricetta.steps.length - 1"
+              mat-button
+              matStepperNext
+            >
               Avanti
             </button>
           </div>
