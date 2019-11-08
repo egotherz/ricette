@@ -17,7 +17,7 @@ export class RicettaSingolaComponent implements OnInit, OnDestroy {
 
   @ViewChild('stepper', {static: false}) stepper: MatVerticalStepper;
   private routeSub: Subscription;
-  private stepSelezionato: boolean;
+  stepSelezionato: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +31,7 @@ export class RicettaSingolaComponent implements OnInit, OnDestroy {
       .getRicetta(params.id)
       .then(ricetta => {
         this.ricetta = ricetta;
-        this.ngOnInit();
+        this.init();
       })
       .catch(error => {
         console.error(error);
