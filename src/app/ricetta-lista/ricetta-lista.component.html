@@ -7,6 +7,10 @@
         <ng-template class="temp" [ngIf]="searchbar">
           <input type="text" name="tag">
         </ng-template>
+        <div class="">
+           <!-- <input type="text" name="search" [(ngModel)]="searchText"> -->
+           <input type="text" name="search">
+        </div>
       </div>
       <button mat-icon-button aria-label="" (click)="searchbar=!searchbar">
         <mat-icon>search</mat-icon>
@@ -16,9 +20,10 @@
       </button>
     </div>
 
-  <!--   <div>
-
+    <!-- <div *ngFor="let ricetta of ricette | filter:searchText">
+      {{ ricettr.titolo }}
     </div> -->
+
   </mat-toolbar-row>
 </mat-toolbar>
 
