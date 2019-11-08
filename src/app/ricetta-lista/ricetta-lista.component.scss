@@ -1,14 +1,16 @@
 .search{
   position: relative;
   display: flex;
-  justify-content: space-between;
-  width: 75px;
+  justify-content: flex-end;
+
+
   .searchbar{
     display: inline;
     input{
       border-radius: 10px;
+      transition: 0.2s;
     }
-    }
+  }
 }
 
 
