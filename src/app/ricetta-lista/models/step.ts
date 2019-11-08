@@ -1,5 +1,5 @@
 export class Step {
-  public stato: boolean;
+  public stato = false;
 
   constructor(
     public titolo: string = '',
