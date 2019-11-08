@@ -14,11 +14,11 @@ export class PouchdbService implements RicettaQl {
   constructor() {
     this.localDB = new PouchDB('ricette');
 
-    PouchDB.plugin(PouchDBfind);
+    // PouchDB.plugin(PouchDBfind);
 
-    this.localDB.createIndex({
-      index: {fields: ['tag']}
-    });
+    // this.localDB.createIndex({
+      // index: {fields: ['tag']}
+    // });
 
     /*const remoteDB = new PouchDB('http://localhost:5984/plans');
     this.localDB
@@ -75,9 +75,6 @@ export class PouchdbService implements RicettaQl {
   }
 
   searchRicetta(tag: string): Promise<Ricetta []> {
-    return this.localDB.find({
-      selector: { tag: tag },
-      limit: 10
-    });
+    return;
   }
 }
