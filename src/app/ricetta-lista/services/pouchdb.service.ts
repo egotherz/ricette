@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import PouchDB from 'pouchdb';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // servo tutto i moduli del programma
 })
 
 export class PouchdbService implements RicettaQl {
