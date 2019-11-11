@@ -6,42 +6,60 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PouchdbService } from '../services/pouchdb.service';
 import { PouchDB } from 'pouchdb';
 
-export interface RicettaElement {
+/* export interface RicettaElement {
   name: any;
-}
+} */
 
 @Component({
   selector: 'app-ricetta-sottolista',
   templateUrl: './ricetta-sottolista.component.html',
   styleUrls: ['./ricetta-sottolista.component.scss']
 })
-export class RicettaSottoListaComponent implements OnInit, RicettaElement {
-  name: any[];
+export class RicettaSottoListaComponent implements OnInit {
+  name: any;
   ricette: Ricetta[];
-  ricetteLista = [
-  { name: this.ricette },
-  { name: 'aa' },
-  { name: 'bb' },
-  { name: 'cc' }
- ];
+
+  recipes: Ricetta[];
+  searchValue: string;
+  displayedColumns: string[] = ['name'];
+  // dataSource;
+  // dataSource = new MatTableDataSource(this.ricetteLista);
 
   constructor(private db: PouchdbService, private snackBar: MatSnackBar) { }
-  displayedColumns: string[] = ['name'];
-  dataSource = new MatTableDataSource(this.ricetteLista);
 
   ngOnInit() {
     this.db.fetchRicette().then(ricette => {
       this.ricette = ricette;
+      console.log(this.ricette);
+      this.recipes = ricette;
     }).catch(error => {
       console.log(error);
       this.snackBar.open(
         'errore nel caricamento dati',
         null, {duration: 2000});
     });
+    /* this.ricetteLista = [
+      { name: this.ricette }
+    ];
+    this.dataSource = new MatTableDataSource(this.ricetteLista);*/
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  get filter() {
+    if (this.recipes && this.searchValue) {
+      this.ricette = this.recipes.filter(item => item.titolo.includes(this.searchValue.trim()));
+    } else {
+      this.ricette = this.recipes;
+    }
+    return this.searchValue;
   }
+
+  set filter(value) {
+    this.searchValue = value;
+  }
+
+  // applyFilter(filterValue: string) {
+    
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
 
 }
