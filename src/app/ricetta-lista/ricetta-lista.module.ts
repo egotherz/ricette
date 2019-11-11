@@ -1,5 +1,4 @@
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RicettaCercaComponent } from './ricetta-cerca/ricetta-cerca.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RicettaListaComponent } from './ricetta-lista.component';
@@ -17,7 +16,6 @@ import { AppRoutingModule } from '../app-routing.module';
     RicettaListaComponent,
     RicettaEditaComponent,
     RicettaSingolaComponent,
-    RicettaCercaComponent,
     RicettaSottoListaComponent
   ],
   imports: [

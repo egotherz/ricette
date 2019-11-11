@@ -6,9 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PouchdbService } from '../services/pouchdb.service';
 import { PouchDB } from 'pouchdb';
 
-/* export interface RicettaElement {
-  name: any;
-} */
 
 @Component({
   selector: 'app-ricetta-sottolista',
@@ -22,8 +19,6 @@ export class RicettaSottoListaComponent implements OnInit {
   recipes: Ricetta[];
   searchValue: string;
   displayedColumns: string[] = ['name'];
-  // dataSource;
-  // dataSource = new MatTableDataSource(this.ricetteLista);
 
   constructor(private db: PouchdbService, private snackBar: MatSnackBar) { }
 
@@ -38,10 +33,6 @@ export class RicettaSottoListaComponent implements OnInit {
         'errore nel caricamento dati',
         null, {duration: 2000});
     });
-    /* this.ricetteLista = [
-      { name: this.ricette }
-    ];
-    this.dataSource = new MatTableDataSource(this.ricetteLista);*/
   }
 
   get filter() {
@@ -56,10 +47,5 @@ export class RicettaSottoListaComponent implements OnInit {
   set filter(value) {
     this.searchValue = value;
   }
-
-  // applyFilter(filterValue: string) {
-    
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-  // }
 
 }
