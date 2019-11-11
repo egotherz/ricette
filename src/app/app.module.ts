@@ -16,7 +16,7 @@ import { RicettaListaModule } from './ricetta-lista/ricetta-lista.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     RicettaListaModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

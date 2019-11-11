@@ -7,9 +7,10 @@ import { RicettaEditaComponent } from './ricetta-edita/ricetta-edita.component';
 import { RicettaSingolaComponent } from './ricetta-singola/ricetta-singola.component';
 import { MatToolbarModule, MatStepperModule, MatInputModule, MatButtonModule, MatIconModule,
   MatListModule, MatSnackBarModule, MatExpansionModule, MatTooltipModule } from '@angular/material';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { RicettaSottoListaComponent } from './ricetta-sottolista/ricetta-sottolista.component';
 import { AppRoutingModule } from '../app-routing.module';
-
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
     RicettaEditaComponent,
     RicettaSingolaComponent,
     RicettaCercaComponent,
-    RicettaSottoListaComponent
+    RicettaSottoListaComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +32,8 @@ import { AppRoutingModule } from '../app-routing.module';
     MatSnackBarModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatNativeDateModule,
+    MatTableDataSource,
     ReactiveFormsModule
   ],
   exports: [RicettaListaComponent]
