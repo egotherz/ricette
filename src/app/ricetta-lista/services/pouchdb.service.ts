@@ -2,6 +2,7 @@ import { Ricetta } from './../models/ricetta';
 import { RicettaQl } from './../models/ricetta-ql';
 import { Injectable } from '@angular/core';
 import PouchDB from 'pouchdb';
+import PouchDBfind from 'pouchdb-find';
 
 @Injectable({
   providedIn: 'root' // servo tutto i moduli del programma
@@ -12,6 +13,13 @@ export class PouchdbService implements RicettaQl {
 
   constructor() {
     this.localDB = new PouchDB('ricette');
+
+    // PouchDB.plugin(PouchDBfind);
+
+    // this.localDB.createIndex({
+      // index: {fields: ['tag']}
+    // });
+
     /*const remoteDB = new PouchDB('http://localhost:5984/plans');
     this.localDB
     .sync(remoteDB, {live: true, retry: true})
@@ -65,7 +73,8 @@ export class PouchdbService implements RicettaQl {
   private updateRicetta(ricetta: Ricetta): Promise<any> {
     return this.localDB.put(ricetta);
   }
-  searchRicetta(tag: string): Promise<Ricetta> {
+
+  searchRicetta(tag: string): Promise<Ricetta []> {
     return;
   }
 }
