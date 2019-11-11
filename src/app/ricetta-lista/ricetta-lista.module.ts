@@ -1,4 +1,4 @@
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RicettaCercaComponent } from './ricetta-cerca/ricetta-cerca.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,8 +7,8 @@ import { RicettaEditaComponent } from './ricetta-edita/ricetta-edita.component';
 import { RicettaSingolaComponent } from './ricetta-singola/ricetta-singola.component';
 import { MatToolbarModule, MatStepperModule, MatInputModule, MatButtonModule, MatIconModule,
   MatListModule, MatSnackBarModule, MatExpansionModule, MatTooltipModule } from '@angular/material';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatNativeDateModule } from '@angular/material';
+import { MatTableModule } from '@angular/material';
 import { RicettaSottoListaComponent } from './ricetta-sottolista/ricetta-sottolista.component';
 import { AppRoutingModule } from '../app-routing.module';
 
@@ -18,7 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
     RicettaEditaComponent,
     RicettaSingolaComponent,
     RicettaCercaComponent,
-    RicettaSottoListaComponent,
+    RicettaSottoListaComponent
   ],
   imports: [
     CommonModule,
@@ -33,9 +33,12 @@ import { AppRoutingModule } from '../app-routing.module';
     MatExpansionModule,
     MatTooltipModule,
     MatNativeDateModule,
-    MatTableDataSource,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    MatTableModule
   ],
-  exports: [RicettaListaComponent]
+  exports: [
+    RicettaListaComponent
+  ]
 })
 export class RicettaListaModule { }

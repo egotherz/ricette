@@ -1,4 +1,5 @@
 import { Ricetta } from './../models/ricetta';
+import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,7 +8,6 @@ import { PouchDB } from 'pouchdb';
 
 export interface RicettaElement {
   name: any;
-  tag: any;
 }
 
 @Component({
@@ -16,20 +16,18 @@ export interface RicettaElement {
   styleUrls: ['./ricetta-sottolista.component.scss']
 })
 export class RicettaSottoListaComponent implements OnInit, RicettaElement {
-  name: string[];
-  tag: string[];
+  name: any[];
   ricette: Ricetta[];
-  ELEMENT_DATA: RicettaElement[] = [
-    // { name: this.ricette, tag: this.ricette }
-    {name: 'luca', tag: 'Lu'},
-    {name: 'Jacopo', tag: 'Ja'},
-    {name: 'Harlem', tag: 'Ha'}
-  ];
+  ricetteLista = [
+  { name: this.ricette },
+  { name: 'aa' },
+  { name: 'bb' },
+  { name: 'cc' }
+ ];
 
   constructor(private db: PouchdbService, private snackBar: MatSnackBar) { }
-
-  displayedColumns: string[] = ['name', 'tag'];
-  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  displayedColumns: string[] = ['name'];
+  dataSource = new MatTableDataSource(this.ricetteLista);
 
   ngOnInit() {
     this.db.fetchRicette().then(ricette => {
