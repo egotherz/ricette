@@ -40,6 +40,7 @@ export class PouchdbService implements RicettaQl {
   getRicetta(id: string): Promise<Ricetta> {
     return this.localDB.get(id);
   }
+
   fetchRicette(): Promise<Ricetta[]> {
     return this.localDB
       .allDocs({include_docs: true})
@@ -50,6 +51,7 @@ export class PouchdbService implements RicettaQl {
   private createRicetta(ricetta: Ricetta): Promise<any> {
     return this.localDB.post(ricetta);
   }
+
   private updateRicetta(ricetta: Ricetta): Promise<any> {
     return this.localDB.put(ricetta);
   }
